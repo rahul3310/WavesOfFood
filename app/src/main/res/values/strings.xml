@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Waves Of Food</string>
+    <string name="deliver_favorite_food">Deliver Favorite Food</string>
+    <string name="waves_of_food">Waves of Food</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login_to_your_account">Login To Your Account</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="login">Login</string>
+    <string name="continue_with">Continue With</string>
+    <string name="or">or</string>
+    <string name="facebook">Facebook</string>
+    <string name="google">Google</string>
+    <string name="don_t_have_account">Don’t Have Account?</string>
+    <string name="sign_up_here">Sign Up Here</string>
+    <string name="name">Name</string>
+    <string name="signup_with">SignUp With</string>
+    <string name="create_account">Create Account</string>
+    <string name="already_have_an_account">Already Have An Account?</string>
+    <string name="choose_your_location">Choose Your Location</string>
+    <string name="message">To provide you with the best dining experience, we need your permission to access your device\'s location. By enabling location services, we can offer personalized restaurant recommendations, accurate delivery estimates, and ensure a seamless food delivery experience.</string>
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="menu">Menu</string>
+    <string name="profile">Profile</string>
+    <string name="explore_your_favorite_food">Explore Your Favorite Food</string>
+</resources>

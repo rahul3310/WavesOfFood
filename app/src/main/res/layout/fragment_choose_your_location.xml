@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.ChooseYourLocationFragment">
+
+        <TextView
+            android:id="@+id/tv_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/yeon_sung"
+            android:text="@string/choose_your_location"
+            android:textSize="25sp"
+            android:layout_marginTop="100dp"
+            android:layout_marginStart="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:id="@+id/text_input_layout_choose_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/edit_text_bg"
+            app:boxStrokeWidthFocused="0dp"
+            app:boxStrokeWidth="0dp"
+            android:inputType="none"
+            android:textColor="@color/black"
+            app:endIconDrawable="@drawable/ic_arrow_circle_down"
+            app:endIconTint="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/tv_location"
+            app:layout_constraintStart_toStartOf="@+id/tv_location"
+            app:layout_constraintTop_toBottomOf="@+id/tv_location">
+
+            <AutoCompleteTextView
+                android:id="@+id/autoComplete_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/loto_regular"
+                android:inputType="none"
+                android:padding="16dp"
+                android:text="@string/choose_your_location"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:fontFamily="@font/loto_regular"
+            android:text="@string/message"
+            android:textSize="16sp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="100dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
