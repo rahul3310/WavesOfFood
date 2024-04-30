@@ -18,14 +18,45 @@ android {
     }
 
     buildTypes {
-        release {
+        getByName("release") {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
         }
+
+        getByName("debug") {
+            applicationIdSuffix = ".debug"
+            isMinifyEnabled = false
+            isShrinkResources = false
+            isDebuggable = true
+        }
+
     }
+    // Specifies one flavor dimension.
+    flavorDimensions += "app"
+    productFlavors {
+        create("user") {
+            dimension = "app"
+            applicationIdSuffix = ".user"
+            versionNameSuffix = "-user"
+            applicationId = "com.waveoffood.admin"
+            versionCode = 1
+            versionName = "alpha"
+            buildConfigField("String","BUILD_IDENTIFIER", "\"user\"")
+        }
+        create("admin") {
+            dimension = "app"
+            applicationIdSuffix = ".admin"
+            versionNameSuffix = "-admin"
+            applicationId = "com.waveoffood.user"
+            versionCode = 1
+            versionName = "alpha"
+            buildConfigField("String","BUILD_IDENTIFIER", "\"admin\"")
+        }
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -34,11 +65,13 @@ android {
         jvmTarget = "1.8"
     }
 
-    buildFeatures{
+    buildFeatures {
+        buildConfig = true
         dataBinding {
             enable = true
         }
     }
+
 }
 
 dependencies {
@@ -55,7 +88,6 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     //image slider------->>
-    implementation ("com.github.denzcoskun:ImageSlideshow:0.1.0")
-/*    implementation ("com.github.UmarAuna:Carousels-Kotlin:0.0.2")
-    implementation ("com.squareup.picasso:picasso:2.71828")*/
+    implementation("com.github.denzcoskun:ImageSlideshow:0.1.0")
+
 }

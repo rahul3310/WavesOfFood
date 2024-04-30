@@ -14,7 +14,7 @@ import com.wavesoffood.R
 import com.wavesoffood.adapters.OrderHistoryRecyclerViewAdapter
 import com.wavesoffood.databinding.FragmentOrderHistoryBinding
 import com.wavesoffood.datamodels.MenuItemDetails
-import com.wavesoffood.utils.ButtonClickCallBacks
+import com.wavesoffood.utils.clicklistener.OnBuyAgainClickListener
 
 class OrderHistoryFragment : Fragment() {
     private lateinit var binding: FragmentOrderHistoryBinding
@@ -48,10 +48,12 @@ class OrderHistoryFragment : Fragment() {
 
         binding.recyclerViewCartContainerRecentBuy.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerViewCartContainerRecentBuy.adapter = adapterRecentBuy
-        val addToCartClick = ButtonClickCallBacks { menuItem ->
-            navController.navigate(R.id.action_menuFragment_to_addToCartFragment)
+        val onBuyAgainClickListener = object : OnBuyAgainClickListener {
+            override fun onBuyAgainClicked(menuItem: MenuItemDetails) {
+                navController.navigate(R.id.action_menuFragment_to_cartFragment)
+            }
         }
-        adapterPreviousBuy.setAddToCartClickListener(addToCartClick)
+        adapterPreviousBuy.setBuyAgainClickListener(onBuyAgainClickListener)
 
         return binding.root
     }

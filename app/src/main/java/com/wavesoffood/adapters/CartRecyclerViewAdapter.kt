@@ -2,17 +2,15 @@ package com.wavesoffood.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.wavesoffood.R
 import com.wavesoffood.databinding.CustomCartViewBinding
 import com.wavesoffood.datamodels.MenuItemDetails
-import com.wavesoffood.utils.ButtonClickCallBacks
+import com.wavesoffood.utils.clicklistener.OnItemClickListener
 
 class CartRecyclerViewAdapter(
     private val menuItemsList: ArrayList<MenuItemDetails>
 ) : RecyclerView.Adapter<CartRecyclerViewAdapter.MenuViewHolder>() {
-
+ private var onItemClickListener : OnItemClickListener? = null
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MenuViewHolder {
         return MenuViewHolder(
             CustomCartViewBinding.inflate(
@@ -39,6 +37,9 @@ class CartRecyclerViewAdapter(
             binding.dishName.text = menuItemDetails.itemName
             binding.itemPrice.text = menuItemDetails.itemPrice
             binding.orderCountButtons.orderCount.text = menuItemDetails.quantity.toString()
+            binding.itemView.setOnClickListener {
+                onItemClickListener?.onItemClick(menuItemDetails)
+            }
 
             binding.orderCountButtons.plusButton.setOnClickListener{
                 plusItemCount(adapterPosition)
@@ -70,8 +71,12 @@ class CartRecyclerViewAdapter(
             notifyItemChanged(position)
             notifyItemRangeChanged(position,menuItemsList.size)
         }
-    }
 
+
+    }
+    fun setOnItemClickListener(listener: OnItemClickListener){
+        onItemClickListener = listener
+    }
 
 
 }

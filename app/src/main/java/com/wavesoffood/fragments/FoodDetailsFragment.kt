@@ -11,9 +11,8 @@ import androidx.navigation.findNavController
 import com.wavesoffood.MainActivity
 import com.wavesoffood.R
 import com.wavesoffood.databinding.FragmentAddToCartBinding
-import com.wavesoffood.databinding.FragmentCartBinding
 
-class AddToCartFragment : Fragment() {
+class FoodDetailsFragment : Fragment() {
     private lateinit var binding: FragmentAddToCartBinding
     private lateinit var navController: NavController
     override fun onCreateView(
@@ -24,7 +23,7 @@ class AddToCartFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_add_to_cart, container, false)
         navController = (activity as MainActivity).findNavController(R.id.nav_host_fragment)
         binding.addToCartButton.setOnClickListener {
-            navController.navigate(R.id.action_addToCartFragment_to_placeMyOrderFragment)
+            navController.navigate(R.id.action_foodDetailsFragment_to_placeMyOrderFragment)
         }
 
         return binding.root

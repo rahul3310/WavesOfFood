@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.loginFragment -> View.GONE
                 R.id.chooseYourLocationFragment -> View.GONE
                 R.id.signUpFragment -> View.GONE
-                R.id.addToCartFragment -> View.GONE
+                R.id.foodDetailsFragment -> View.GONE
                 R.id.placeMyOrderFragment -> View.GONE
                 else -> View.VISIBLE
             }

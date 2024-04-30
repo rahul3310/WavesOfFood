@@ -11,8 +11,11 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_homeFragment_to_addToCartFragment"
-            app:destination="@id/addToCartFragment" />
+            android:id="@+id/action_homeFragment_to_foodDetailsFragment"
+            app:destination="@id/foodDetailsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -54,18 +57,35 @@
         android:name="com.wavesoffood.fragments.CartFragment"
         android:label="fragment_cart"
         tools:layout="@layout/fragment_cart" >
+
         <action
-            android:id="@+id/action_cartFragment_to_addToCartFragment"
-            app:destination="@id/addToCartFragment" />
+            android:id="@+id/action_cartFragment_to_foodDetailsFragment"
+            app:destination="@id/foodDetailsFragment" />
+        <action
+            android:id="@+id/action_cartFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_cartFragment_to_homeFragment2"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_cartFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/action_cartFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
     </fragment>
     <fragment
         android:id="@+id/menuFragment"
         android:name="com.wavesoffood.fragments.OrderHistoryFragment"
         android:label="fragment_menu"
         tools:layout="@layout/fragment_order_history" >
+
         <action
-            android:id="@+id/action_menuFragment_to_addToCartFragment"
-            app:destination="@id/addToCartFragment" />
+            android:id="@+id/action_menuFragment_to_foodDetailsFragment"
+            app:destination="@id/foodDetailsFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
@@ -78,30 +98,13 @@
         android:label="fragment_search"
         tools:layout="@layout/fragment_search" >
         <action
-            android:id="@+id/action_searchFragment_to_addToCartFragment"
-            app:destination="@id/addToCartFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/addToCartFragment"
-        android:name="com.wavesoffood.fragments.AddToCartFragment"
-        android:label="fragment_add_to_cart"
-        tools:layout="@layout/fragment_add_to_cart" >
+            android:id="@+id/action_searchFragment_to_foodDetailsFragment"
+            app:destination="@id/foodDetailsFragment" />
         <action
-            android:id="@+id/action_addToCartFragment_to_searchFragment"
-            app:destination="@id/searchFragment" />
-        <action
-            android:id="@+id/action_addToCartFragment_to_menuFragment"
-            app:destination="@id/menuFragment" />
-        <action
-            android:id="@+id/action_addToCartFragment_to_cartFragment"
+            android:id="@+id/action_searchFragment_to_cartFragment"
             app:destination="@id/cartFragment" />
-        <action
-            android:id="@+id/action_addToCartFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-        <action
-            android:id="@+id/action_addToCartFragment_to_placeMyOrderFragment"
-            app:destination="@id/placeMyOrderFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/placeMyOrderFragment"
         android:name="com.wavesoffood.fragments.PlaceMyOrderFragment"
@@ -126,5 +129,28 @@
             app:destination="@id/homeFragment"
             app:popUpTo="@id/homeFragment"
             app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_placeMyOrderFragment_to_foodDetailsFragment"
+            app:destination="@id/foodDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodDetailsFragment"
+        android:name="com.wavesoffood.fragments.FoodDetailsFragment"
+        android:label="FoodDetailsFragment" >
+        <action
+            android:id="@+id/action_foodDetailsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_foodDetailsFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_foodDetailsFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/action_foodDetailsFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
+        <action
+            android:id="@+id/action_foodDetailsFragment_to_placeMyOrderFragment"
+            app:destination="@id/placeMyOrderFragment" />
     </fragment>
 </navigation>

@@ -7,10 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.wavesoffood.MainActivity
 import com.wavesoffood.R
 import com.wavesoffood.adapters.CartRecyclerViewAdapter
 import com.wavesoffood.databinding.FragmentCartBinding
 import com.wavesoffood.datamodels.MenuItemDetails
+import com.wavesoffood.utils.clicklistener.OnItemClickListener
 
 class CartFragment : Fragment() {
  private lateinit var binding: FragmentCartBinding
@@ -37,7 +39,12 @@ class CartFragment : Fragment() {
         binding.recyclerViewCartContainer.layoutManager =   LinearLayoutManager(requireContext())
         binding.recyclerViewCartContainer.adapter = adapter
 
-
+        val onItemClickListener = object : OnItemClickListener{
+            override fun onItemClick(menuItemDetails: MenuItemDetails) {
+               ( activity as MainActivity).getNavController().navigate(R.id.action_cartFragment_to_foodDetailsFragment)
+            }
+        }
+          adapter.setOnItemClickListener(onItemClickListener)
         return binding.root
     }
 

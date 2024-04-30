@@ -4,16 +4,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.wavesoffood.databinding.CustomMenuViewBinding
 import com.wavesoffood.databinding.OrderHistoryCustomViewBinding
 import com.wavesoffood.datamodels.MenuItemDetails
-import com.wavesoffood.utils.ButtonClickCallBacks
+import com.wavesoffood.utils.clicklistener.OnBuyAgainClickListener
 
 class OrderHistoryRecyclerViewAdapter(
     private val menuItemsList: List<MenuItemDetails>
 ) : RecyclerView.Adapter<OrderHistoryRecyclerViewAdapter.MenuViewHolder>() {
 
-    private var addToCartClickListener: ButtonClickCallBacks? = null
+    private var buyAgainClickListener: OnBuyAgainClickListener? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MenuViewHolder {
         return MenuViewHolder(OrderHistoryCustomViewBinding.inflate(LayoutInflater.from(parent.context),parent,false))
@@ -34,22 +33,22 @@ class OrderHistoryRecyclerViewAdapter(
               binding.dishName.text = menuItemDetails.itemName
               binding.itemPrice.text = menuItemDetails.itemPrice
               if (menuItemDetails.isRecentBuy){
-                  binding.addToCartButton.visibility = View.GONE
+                  binding.buyAgain.visibility = View.GONE
                   binding.recentBuy.visibility = View.VISIBLE
               }else{
-                  binding.addToCartButton.visibility = View.VISIBLE
+                  binding.buyAgain.visibility = View.VISIBLE
                   binding.recentBuy.visibility = View.GONE
               }
-              binding.addToCartButton.setOnClickListener {
-                  addToCartClickListener?.onAddToCartClicked(menuItemDetails)
+              binding.buyAgain.setOnClickListener {
+                  buyAgainClickListener?.onBuyAgainClicked(menuItemDetails)
 
               }
           }
 
     }
 
-    fun setAddToCartClickListener(listener: ButtonClickCallBacks) {
-        addToCartClickListener = listener
+    fun setBuyAgainClickListener(listener: OnBuyAgainClickListener) {
+        buyAgainClickListener = listener
     }
 
 }
