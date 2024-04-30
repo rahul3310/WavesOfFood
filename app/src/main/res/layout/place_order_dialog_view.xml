@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:fontFamily="@font/yeon_sung"
+        android:text="Congrats\nYour Order Placed"
+        android:textSize="25sp"
+        android:layout_marginTop="48dp"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/ic_done_button"/>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/goToHomeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/green_button_bg"
+        android:fontFamily="@font/yeon_sung"
+        android:text="Go To Home"
+        android:padding="16dp"
+        android:layout_marginBottom="48dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textAllCaps="false"/>
+
+</LinearLayout>

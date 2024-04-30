@@ -9,50 +9,48 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.denzcoskun.imageslider.models.SlideModel
 import com.wavesoffood.MainActivity
 import com.wavesoffood.R
 import com.wavesoffood.adapters.OrderHistoryRecyclerViewAdapter
-import com.wavesoffood.databinding.FragmentHomeBinding
+import com.wavesoffood.databinding.FragmentSearchBinding
 import com.wavesoffood.datamodels.MenuItemDetails
 import com.wavesoffood.utils.ButtonClickCallBacks
 
 
-class HomeFragment : Fragment() {
-    private lateinit var binding: FragmentHomeBinding
+class SearchFragment : Fragment() {
+    private lateinit var binding: FragmentSearchBinding
+    private lateinit var navController: NavController
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
-
-        val imageList = ArrayList<SlideModel>()
-        imageList.add(SlideModel(R.drawable.banner1))
-        imageList.add(SlideModel(R.drawable.banner1))
-        imageList.add(SlideModel(R.drawable.banner1))
-        imageList.add(SlideModel(R.drawable.banner1))
-
-        binding.imageSlider.setImageList(imageList) //centerCrop for all images
-        binding.imageSlider.startSliding(3000)
-
+        // Inflate the layout for this fragment
+        binding =  DataBindingUtil.inflate(inflater,R.layout.fragment_search, container, false)
+        navController = (activity as MainActivity).findNavController(R.id.nav_host_fragment)
         //Menu item Recyclerview---->
         val menuItemsList = ArrayList<MenuItemDetails>()
         menuItemsList.add(MenuItemDetails("Herbal Pancake","$ 35",R.drawable.menu_photo_1))
         menuItemsList.add(MenuItemDetails("Herbal Pancake","$ 35",R.drawable.menu_photo_2))
         menuItemsList.add(MenuItemDetails("Herbal Pancake","$ 35",R.drawable.menu_photo_3))
+        menuItemsList.add(MenuItemDetails("Herbal Pancake","$ 35",R.drawable.menu_photo_4))
         menuItemsList.add(MenuItemDetails("Herbal Pancake","$ 35",R.drawable.menu_photo_1))
         menuItemsList.add(MenuItemDetails("Herbal Pancake","$ 35",R.drawable.menu_photo_2))
         menuItemsList.add(MenuItemDetails("Herbal Pancake","$ 35",R.drawable.menu_photo_3))
+        menuItemsList.add(MenuItemDetails("Herbal Pancake","$ 35",R.drawable.menu_photo_4))
+        menuItemsList.add(MenuItemDetails("Herbal Pancake","$ 35",R.drawable.menu_photo_1))
+        menuItemsList.add(MenuItemDetails("Herbal Pancake","$ 35",R.drawable.menu_photo_2))
+        menuItemsList.add(MenuItemDetails("Herbal Pancake","$ 35",R.drawable.menu_photo_3))
+        menuItemsList.add(MenuItemDetails("Herbal Pancake","$ 35",R.drawable.menu_photo_4))
         val adapter = OrderHistoryRecyclerViewAdapter(menuItemsList = menuItemsList)
-        binding.recyclerViewMenuContainer.layoutManager =   LinearLayoutManager(requireContext())
-        binding.recyclerViewMenuContainer.adapter = adapter
-
+        binding.recyclerViewCartContainer.layoutManager =   LinearLayoutManager(requireContext())
+        binding.recyclerViewCartContainer.adapter = adapter
 
         val addToCartClick = ButtonClickCallBacks{menuItem ->
-            (activity as MainActivity).getNavController().navigate(R.id.action_homeFragment_to_addToCartFragment)
+            navController.navigate(R.id.action_searchFragment_to_addToCartFragment)
         }
         adapter.setAddToCartClickListener(addToCartClick)
+
         return binding.root
     }
 

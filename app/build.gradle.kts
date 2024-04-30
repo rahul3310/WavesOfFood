@@ -48,7 +48,14 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    //image slider------->>
+    implementation ("com.github.denzcoskun:ImageSlideshow:0.1.0")
+/*    implementation ("com.github.UmarAuna:Carousels-Kotlin:0.0.2")
+    implementation ("com.squareup.picasso:picasso:2.71828")*/
 }

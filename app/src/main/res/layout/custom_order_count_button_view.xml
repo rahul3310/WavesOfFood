@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/minus_button"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:text="-"
+            android:textSize="16dp"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:textColor="@color/white"
+            android:background="@drawable/rounded_corner_bg_green" />
+
+        <TextView
+            android:id="@+id/order_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:text="1"
+            android:layout_gravity="center"
+            android:fontFamily="@font/loto_regular"
+            android:textColor="@color/black"
+            android:textSize="19sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/plus_button"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:text="+"
+            android:textSize="16sp"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:textColor="@color/white"
+            android:background="@drawable/rounded_corner_bg_green" />
+
+    </LinearLayout>
+</layout>

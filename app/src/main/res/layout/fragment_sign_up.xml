@@ -1,207 +1,215 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".fragments.SignUpFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <ImageView
-        android:id="@+id/image_view_app_logo"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="30dp"
-        android:src="@drawable/ic_app_logo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data>
 
-    <TextView
-        android:id="@+id/tv_app_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:fontFamily="@font/yeon_sung"
-        android:text="@string/waves_of_food"
-        android:textColor="@color/black"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image_view_app_logo" />
+    </data>
 
-    <TextView
-        android:id="@+id/app_descripsion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/loto_regular"
-        android:text="@string/deliver_favorite_food"
-        android:textColor="@color/green"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_app_name" />
-
-    <TextView
-        android:id="@+id/signup_here_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/yeon_sung"
-        android:text="@string/sign_up_here"
-        android:textColor="@color/green"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/app_descripsion" />
-
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/edit_text_name"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/edit_text_bg"
-        android:drawableStart="@drawable/ic_person_icon"
-        android:drawablePadding="16dp"
-        android:hint="@string/name"
-        android:padding="16dp"
-        android:textColorHint="@color/hint_color"
-        app:layout_constraintEnd_toEndOf="@+id/signup_here_tv"
-        app:layout_constraintStart_toStartOf="@+id/signup_here_tv"
-        app:layout_constraintTop_toBottomOf="@+id/signup_here_tv" />
+        android:layout_height="match_parent"
+        tools:context=".fragments.SignUpFragment">
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/edit_text_email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/edit_text_bg"
-        android:drawableStart="@drawable/ic_message_icon"
-        android:drawablePadding="16dp"
-        android:hint="@string/password"
-        android:padding="16dp"
-        android:textColorHint="@color/hint_color"
-        app:layout_constraintEnd_toEndOf="@+id/edit_text_name"
-        app:layout_constraintStart_toStartOf="@+id/edit_text_name"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_name" />
+        <ImageView
+            android:id="@+id/image_view_app_logo"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/ic_app_logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/edit_text_password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/edit_text_bg"
-        android:drawableStart="@drawable/ic_password_lock"
-        android:drawablePadding="16dp"
-        android:hint="@string/password"
-        android:padding="16dp"
-        android:textColorHint="@color/hint_color"
-        app:layout_constraintEnd_toEndOf="@+id/edit_text_email"
-        app:layout_constraintStart_toStartOf="@+id/edit_text_email"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_email" />
+        <TextView
+            android:id="@+id/tv_app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/yeon_sung"
+            android:text="@string/waves_of_food"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_view_app_logo" />
 
-    <TextView
-        android:id="@+id/tv_or"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:fontFamily="@font/yeon_sung"
-        android:text="@string/or"
-        android:textColor="@color/black"
-        android:textSize="11sp"
-        android:textStyle="normal"
-        app:layout_constraintEnd_toEndOf="@+id/edit_text_password"
-        app:layout_constraintStart_toStartOf="@id/edit_text_password"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_password" />
+        <TextView
+            android:id="@+id/app_descripsion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/loto_regular"
+            android:text="@string/deliver_favorite_food"
+            android:textColor="@color/green"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_app_name" />
 
-    <TextView
-        android:id="@+id/tv_continue_with"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:fontFamily="@font/yeon_sung"
-        android:text="@string/signup_with"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/tv_or"
-        app:layout_constraintStart_toStartOf="@+id/tv_or"
-        app:layout_constraintTop_toBottomOf="@+id/tv_or" />
+        <TextView
+            android:id="@+id/signup_here_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/yeon_sung"
+            android:text="@string/sign_up_here"
+            android:textColor="@color/green"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/app_descripsion" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/edit_text_bg"
-        android:padding="16dp"
-        android:text="@string/facebook"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        android:gravity="center"
-        android:layout_marginEnd="16dp"
-        android:fontFamily="@font/loto_regular"
-        app:layout_constraintEnd_toEndOf="@+id/tv_continue_with"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_continue_with"
-        app:drawableStartCompat="@drawable/ic_facebook_logo"
-        android:drawablePadding="16dp"/>
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edit_text_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/edit_text_bg"
+            android:drawableStart="@drawable/ic_person_icon"
+            android:drawablePadding="16dp"
+            android:hint="@string/name"
+            android:padding="16dp"
+            android:textColorHint="@color/hint_color"
+            app:layout_constraintEnd_toEndOf="@+id/signup_here_tv"
+            app:layout_constraintStart_toStartOf="@+id/signup_here_tv"
+            app:layout_constraintTop_toBottomOf="@+id/signup_here_tv" />
 
-    <TextView
-        android:id="@+id/btn_google"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
-        android:gravity="center"
-        android:background="@drawable/edit_text_bg"
-        android:fontFamily="@font/loto_regular"
-        android:padding="16dp"
-        android:text="@string/google"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        app:layout_goneMarginStart="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/tv_continue_with"
-        app:layout_constraintTop_toBottomOf="@+id/tv_continue_with"
-        app:drawableStartCompat="@drawable/ic_google_logo"
-        android:drawablePadding="16dp"/>
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edit_text_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/edit_text_bg"
+            android:drawableStart="@drawable/ic_message_icon"
+            android:drawablePadding="16dp"
+            android:hint="@string/password"
+            android:padding="16dp"
+            android:textColorHint="@color/hint_color"
+            app:layout_constraintEnd_toEndOf="@+id/edit_text_name"
+            app:layout_constraintStart_toStartOf="@+id/edit_text_name"
+            app:layout_constraintTop_toBottomOf="@+id/edit_text_name" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/create_account_button"
-        android:layout_width="157dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/green_button_bg"
-        android:fontFamily="@font/yeon_sung"
-        android:text="@string/create_account"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_google" />
-    <TextView
-        android:id="@+id/tv_already_have_acc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:fontFamily="@font/loto_regular"
-        android:text="@string/already_have_an_account"
-        android:textColor="@color/green"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/create_account_button" />
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edit_text_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/edit_text_bg"
+            android:drawableStart="@drawable/ic_password_lock"
+            android:drawablePadding="16dp"
+            android:hint="@string/password"
+            android:padding="16dp"
+            android:textColorHint="@color/hint_color"
+            app:layout_constraintEnd_toEndOf="@+id/edit_text_email"
+            app:layout_constraintStart_toStartOf="@+id/edit_text_email"
+            app:layout_constraintTop_toBottomOf="@+id/edit_text_email" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tv_or"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/yeon_sung"
+            android:text="@string/or"
+            android:textColor="@color/black"
+            android:textSize="11sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="@+id/edit_text_password"
+            app:layout_constraintStart_toStartOf="@id/edit_text_password"
+            app:layout_constraintTop_toBottomOf="@+id/edit_text_password" />
+
+        <TextView
+            android:id="@+id/tv_continue_with"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/yeon_sung"
+            android:text="@string/signup_with"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/tv_or"
+            app:layout_constraintStart_toStartOf="@+id/tv_or"
+            app:layout_constraintTop_toBottomOf="@+id/tv_or" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/edit_text_bg"
+            android:padding="16dp"
+            android:text="@string/facebook"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/loto_regular"
+            app:layout_constraintEnd_toEndOf="@+id/tv_continue_with"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_continue_with"
+            app:drawableStartCompat="@drawable/ic_facebook_logo"
+            android:drawablePadding="16dp" />
+
+        <TextView
+            android:id="@+id/btn_google"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:gravity="center"
+            android:background="@drawable/edit_text_bg"
+            android:fontFamily="@font/loto_regular"
+            android:padding="16dp"
+            android:text="@string/google"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_goneMarginStart="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv_continue_with"
+            app:layout_constraintTop_toBottomOf="@+id/tv_continue_with"
+            app:drawableStartCompat="@drawable/ic_google_logo"
+            android:drawablePadding="16dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/create_account_button"
+            android:layout_width="157dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/green_button_bg"
+            android:fontFamily="@font/yeon_sung"
+            android:text="@string/create_account"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_google" />
+
+        <TextView
+            android:id="@+id/tv_already_have_acc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/loto_regular"
+            android:text="@string/already_have_an_account"
+            android:textColor="@color/green"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/create_account_button" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

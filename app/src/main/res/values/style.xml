@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="RobotoBoldTextAppearance">
+        <item name="android:fontFamily">@font/yeon_sung</item>
+        <item name="android:textSize">24dp</item>
+    </style>
+    <style name="PlaceOrderDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowBackground">@drawable/rounded_corner_16_bg</item>
+    </style>
+</resources>

@@ -4,6 +4,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="border_color">#F4F4F4</color>
     <color name="green">#53E88B</color>
-    <color name="hint_color">#303B3B3B</color>
+    <color name="light_green">#2059C477</color>
+    <color name="dark_green">#15BE77</color>
+    <color name="hint_color">#403B3B3B</color>
     <color name="violet">#5A6CEA</color>
 </resources>

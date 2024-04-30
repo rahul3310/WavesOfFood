@@ -2,8 +2,15 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.WavesOfFood" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+         <item name="colorPrimary">@color/white</item>
+        <item name="android:windowBackground">@color/white</item>
     </style>
 
-    <style name="Theme.WavesOfFood" parent="Base.Theme.WavesOfFood" />
+    <style name="Theme.WavesOfFood" parent="Base.Theme.WavesOfFood">
+        <item name="colorPrimary">@color/green</item>
+        <item name="colorSecondary">@color/white</item>
+        <item name="backgroundColor">@color/white</item>
+        <item name="colorTertiary">@color/white</item>
+        <item name="android:windowBackground">@color/white</item>
+    </style>
 </resources>
