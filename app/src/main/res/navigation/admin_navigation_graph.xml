@@ -30,6 +30,9 @@
             app:destination="@id/loginFragment"
             app:popUpTo="@layout/fragment_login"
             app:popUpToInclusive="false"/>
+        <action
+            android:id="@+id/action_adminHomeFragment_to_createUserFragment"
+            app:destination="@id/createUserFragment" />
 
     </fragment>
     <fragment
@@ -49,4 +52,8 @@
         android:id="@+id/pendingOrdersFragment"
         android:name="com.wavesoffood.adapters.PendingOrdersFragment"
         android:label="PendingOrdersFragment" />
+    <fragment
+        android:id="@+id/createUserFragment"
+        android:name="com.wavesoffood.adminfragments.CreateUserFragment"
+        android:label="CreateUserFragment" />
 </navigation>

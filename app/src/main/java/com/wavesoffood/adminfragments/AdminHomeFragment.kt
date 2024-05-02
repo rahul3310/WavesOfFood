@@ -33,6 +33,10 @@ class AdminHomeFragment : Fragment() {
                 .navigate(R.id.action_adminHomeFragment_to_outOfDeliveryFragment)
         }
 
+        binding.createUserCard.setOnClickListener {
+            (activity as MainActivity).getNavController()
+                .navigate(R.id.action_adminHomeFragment_to_createUserFragment)
+        }
         binding.logoutCard.setOnClickListener {
             (activity as MainActivity).getNavController().navigate(R.id.action_adminHomeFragment_to_loginFragment)
         }

@@ -54,6 +54,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.signUpFragment -> View.GONE
                 R.id.foodDetailsFragment -> View.GONE
                 R.id.placeMyOrderFragment -> View.GONE
+                R.id.createUserFragment -> View.GONE
                 else -> View.VISIBLE
             }
         }

@@ -47,8 +47,8 @@
             android:textColor="@color/green"
             android:textSize="14sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tv_app_name"
+            app:layout_constraintStart_toStartOf="@+id/tv_app_name"
             app:layout_constraintTop_toBottomOf="@+id/tv_app_name" />
 
         <TextView
@@ -58,11 +58,12 @@
             android:layout_marginTop="16dp"
             android:fontFamily="@font/loto_bold"
             android:text="@string/login_to_your_account"
+            android:textAlignment="center"
             android:textColor="@color/green"
             android:textSize="20sp"
             android:textStyle="normal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tv_app_name"
+            app:layout_constraintStart_toStartOf="@+id/tv_app_name"
             app:layout_constraintTop_toBottomOf="@+id/app_descripsion" />
 
         <androidx.appcompat.widget.AppCompatEditText
@@ -92,7 +93,8 @@
             android:background="@drawable/edit_text_bg"
             android:hint="@string/password"
             android:padding="16dp"
-            android:drawableLeft="@drawable/ic_password_lock"
+            android:inputType="textPassword"
+            android:drawableStart="@drawable/ic_password_lock"
             android:drawablePadding="20dp"
             android:textColorHint="@color/hint_color"
             app:layout_constraintEnd_toEndOf="@+id/edit_text_email"
