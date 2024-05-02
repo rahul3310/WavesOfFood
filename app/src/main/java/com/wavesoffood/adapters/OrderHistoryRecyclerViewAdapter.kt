@@ -31,7 +31,7 @@ class OrderHistoryRecyclerViewAdapter(
           fun bind(menuItemDetails: MenuItemDetails){
               binding.menuImage.setImageResource(menuItemDetails.itemImage)
               binding.dishName.text = menuItemDetails.itemName
-              binding.itemPrice.text = menuItemDetails.itemPrice
+              binding.itemPrice.text = "$ ${menuItemDetails.itemPrice}"
               if (menuItemDetails.isRecentBuy){
                   binding.buyAgain.visibility = View.GONE
                   binding.recentBuy.visibility = View.VISIBLE

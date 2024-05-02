@@ -1,21 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/search_view_edit_text"
+    <data>
+
+    </data>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/what_do_you_want_to_order"
-        android:textSize="12sp"
-        android:fontFamily="@font/loto_regular"
-        android:textColorHint="@color/hint_color"
-        android:textColor="@color/black"
-        android:padding="10dp"
-        android:background="@drawable/search_view_bg"
-        android:drawablePadding="16dp"
-        android:drawableStart="@drawable/baseline_search_24"/>
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
 
-</LinearLayout>
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/search_view_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/what_do_you_want_to_order"
+            android:textSize="16sp"
+            android:fontFamily="@font/loto_regular"
+            android:textColorHint="@color/hint_color"
+            android:textColor="@color/black"
+            android:padding="10dp"
+            android:background="@drawable/search_view_bg"
+            android:drawablePadding="16dp"
+            android:inputType="text"
+            android:imeOptions="actionSearch"
+            android:drawableStart="@drawable/baseline_search_24" />
+
+    </LinearLayout>
+</layout>

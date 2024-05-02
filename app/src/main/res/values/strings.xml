@@ -32,4 +32,10 @@
     <string name="history">History</string>
     <string name="buy_again">Buy Again</string>
     <string name="save_information">Save Information</string>
+    <string name="please_add_item_to_cart">Please Add Item to Cart</string>
+    <string name="add_item">Add Item</string>
+    <string name="out_of_delivery">Out Of Delivery</string>
+    <string name="all_item">All Item</string>
+    <string name="pending_orders">Pending Orders</string>
+    <string name="admin_profile">Admin Profile</string>
 </resources>

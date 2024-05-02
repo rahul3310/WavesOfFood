@@ -29,17 +29,17 @@ class OrderHistoryFragment : Fragment() {
         navController = (activity as MainActivity).findNavController(R.id.nav_host_fragment)
         //Menu item Recyclerview---->
         val menuItemsList = ArrayList<MenuItemDetails>()
-        menuItemsList.add(MenuItemDetails("Herbal Pancake", "$ 35", R.drawable.menu_photo_1))
-        menuItemsList.add(MenuItemDetails("Herbal Pancake", "$ 35", R.drawable.menu_photo_2))
-        menuItemsList.add(MenuItemDetails("Herbal Pancake", "$ 35", R.drawable.menu_photo_3))
-        menuItemsList.add(MenuItemDetails("Herbal Pancake", "$ 35", R.drawable.menu_photo_4))
-        menuItemsList.add(MenuItemDetails("Herbal Pancake", "$ 35", R.drawable.menu_photo_1))
-        menuItemsList.add(MenuItemDetails("Herbal Pancake", "$ 35", R.drawable.menu_photo_1))
-        menuItemsList.add(MenuItemDetails("Herbal Pancake", "$ 35", R.drawable.menu_photo_2, isRecentBuy = true))
-        menuItemsList.add(MenuItemDetails("Herbal Pancake", "$ 35", R.drawable.menu_photo_3))
-        menuItemsList.add(MenuItemDetails("Herbal Pancake", "$ 35", R.drawable.menu_photo_4, isRecentBuy = true))
-        menuItemsList.add(MenuItemDetails("Herbal Pancake", "$ 35", R.drawable.menu_photo_4, isRecentBuy = true))
-        menuItemsList.add(MenuItemDetails("Herbal Pancake", "$ 35", R.drawable.menu_photo_4, isRecentBuy = true))
+        menuItemsList.add(MenuItemDetails("Herbal Pancake", 35, R.drawable.menu_photo_1))
+        menuItemsList.add(MenuItemDetails("Herbal Pancake", 35, R.drawable.menu_photo_2))
+        menuItemsList.add(MenuItemDetails("Herbal Pancake", 35, R.drawable.menu_photo_3))
+        menuItemsList.add(MenuItemDetails("Herbal Pancake", 35, R.drawable.menu_photo_4))
+        menuItemsList.add(MenuItemDetails("Herbal Pancake", 35, R.drawable.menu_photo_1))
+        menuItemsList.add(MenuItemDetails("Herbal Pancake", 35, R.drawable.menu_photo_1))
+        menuItemsList.add(MenuItemDetails("Herbal Pancake", 35, R.drawable.menu_photo_2, isRecentBuy = true))
+        menuItemsList.add(MenuItemDetails("Herbal Pancake", 35, R.drawable.menu_photo_3))
+        menuItemsList.add(MenuItemDetails("Herbal Pancake", 35, R.drawable.menu_photo_4, isRecentBuy = true))
+        menuItemsList.add(MenuItemDetails("Herbal Pancake", 35, R.drawable.menu_photo_4, isRecentBuy = true))
+        menuItemsList.add(MenuItemDetails("Herbal Pancake", 35, R.drawable.menu_photo_4, isRecentBuy = true))
         val adapterRecentBuy = OrderHistoryRecyclerViewAdapter(menuItemsList = menuItemsList.filter { it.isRecentBuy })
         val adapterPreviousBuy = OrderHistoryRecyclerViewAdapter(menuItemsList = menuItemsList.filter { !it.isRecentBuy })
         binding.recyclerViewCartContainerPreviousBuy.layoutManager = LinearLayoutManager(requireContext())
@@ -50,7 +50,9 @@ class OrderHistoryFragment : Fragment() {
         binding.recyclerViewCartContainerRecentBuy.adapter = adapterRecentBuy
         val onBuyAgainClickListener = object : OnBuyAgainClickListener {
             override fun onBuyAgainClicked(menuItem: MenuItemDetails) {
-                navController.navigate(R.id.action_menuFragment_to_cartFragment)
+                val bundle = Bundle()
+                bundle.putParcelable("menuItem", menuItem)
+                navController.navigate(R.id.action_menuFragment_to_cartFragment,bundle)
             }
         }
         adapterPreviousBuy.setBuyAgainClickListener(onBuyAgainClickListener)

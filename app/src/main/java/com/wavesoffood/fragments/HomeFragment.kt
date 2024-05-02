@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.denzcoskun.imageslider.models.SlideModel
 import com.wavesoffood.MainActivity
@@ -19,13 +20,14 @@ import com.wavesoffood.utils.clicklistener.OnItemClickListener
 
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
+    private lateinit var navController: NavController
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
-
+        navController = (activity as MainActivity).getNavController()
         val imageList = ArrayList<SlideModel>()
         imageList.add(SlideModel(R.drawable.banner1))
         imageList.add(SlideModel(R.drawable.banner1))
@@ -37,28 +39,34 @@ class HomeFragment : Fragment() {
 
         //Menu item Recyclerview---->
         val menuItemsList = ArrayList<MenuItemDetails>()
-        menuItemsList.add(MenuItemDetails("Herbal Pancake", "$ 35", R.drawable.menu_photo_1))
-        menuItemsList.add(MenuItemDetails("Herbal Pancake", "$ 35", R.drawable.menu_photo_2))
-        menuItemsList.add(MenuItemDetails("Herbal Pancake", "$ 35", R.drawable.menu_photo_3))
-        menuItemsList.add(MenuItemDetails("Herbal Pancake", "$ 35", R.drawable.menu_photo_1))
-        menuItemsList.add(MenuItemDetails("Herbal Pancake", "$ 35", R.drawable.menu_photo_2))
-        menuItemsList.add(MenuItemDetails("Herbal Pancake", "$ 35", R.drawable.menu_photo_3))
+        menuItemsList.add(MenuItemDetails("Herbal Pancake", 35, R.drawable.menu_photo_1))
+        menuItemsList.add(MenuItemDetails("Herbal Pancake", 35, R.drawable.menu_photo_2))
+        menuItemsList.add(MenuItemDetails("Herbal Pancake", 35, R.drawable.menu_photo_3))
+        menuItemsList.add(MenuItemDetails("Herbal Pancake", 35, R.drawable.menu_photo_1))
+        menuItemsList.add(MenuItemDetails("Herbal Pancake", 35, R.drawable.menu_photo_2))
+        menuItemsList.add(MenuItemDetails("Herbal Pancake", 35, R.drawable.menu_photo_3))
         val adapter = MenuAdapter(menuItemsList = menuItemsList)
         binding.recyclerViewMenuContainer.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerViewMenuContainer.adapter = adapter
 
+        binding.viewMenuButton.setOnClickListener {
+            navController.navigate(R.id.action_homeFragment_to_searchFragment)
+        }
+
 
         val addToCartClick = object : OnAddToCartClickListener {
             override fun onAddToCartClicked(menuItem: MenuItemDetails) {
-                (activity as MainActivity).getNavController()
-                    .navigate(R.id.action_homeFragment_to_cartFragment)
+                val bundle = Bundle()
+                bundle.putParcelable("menuItem", menuItem)
+                navController.navigate(R.id.action_homeFragment_to_cartFragment,bundle)
             }
 
         }
         val onItemClickListener = object : OnItemClickListener {
             override fun onItemClick(menuItemDetails: MenuItemDetails) {
-                (activity as MainActivity).getNavController()
-                    .navigate(R.id.action_homeFragment_to_foodDetailsFragment)
+                val bundle = Bundle()
+                bundle.putParcelable("menuItem", menuItemDetails)
+                navController.navigate(R.id.action_homeFragment_to_foodDetailsFragment, bundle)
             }
         }
         adapter.setOnAddToCartListener(addToCartClick)

@@ -35,7 +35,7 @@ class CartRecyclerViewAdapter(
         fun bind(menuItemDetails: MenuItemDetails) {
             binding.menuImage.setImageResource(menuItemDetails.itemImage)
             binding.dishName.text = menuItemDetails.itemName
-            binding.itemPrice.text = menuItemDetails.itemPrice
+            binding.itemPrice.text = "$ ${menuItemDetails.itemPrice}"
             binding.orderCountButtons.orderCount.text = menuItemDetails.quantity.toString()
             binding.itemView.setOnClickListener {
                 onItemClickListener?.onItemClick(menuItemDetails)
@@ -51,20 +51,31 @@ class CartRecyclerViewAdapter(
                 deleteItem(adapterPosition)
             }
 
-            binding
         }
-        private fun plusItemCount(position : Int){
-            if (menuItemsList[position].quantity<=10) {
+        private fun plusItemCount(position: Int) {
+            if ( menuItemsList[position].quantity<10) {
+                val priceOfOneItem =
+                    menuItemsList[position].itemPrice / menuItemsList[position].quantity
                 menuItemsList[position].quantity += 1
-                binding.orderCountButtons.orderCount.text =  menuItemsList[position].quantity.toString()
+                menuItemsList[position].itemPrice = priceOfOneItem * menuItemsList[position].quantity
+                binding.orderCountButtons.orderCount.text =
+                    menuItemsList[position].quantity.toString()
+                notifyItemChanged(position)
+                notifyItemRangeChanged(position, menuItemsList.size)
             }
         }
-        private fun minusItemCount(position : Int){
-            if (menuItemsList[position].quantity>1) {
+
+        private fun minusItemCount(position: Int) {
+            if (menuItemsList[position].quantity > 1) {
+                val priceOfOneItem =  menuItemsList[position].itemPrice/menuItemsList[position].quantity
                 menuItemsList[position].quantity -= 1
-                binding.orderCountButtons.orderCount.text =  menuItemsList[position].quantity.toString()
+                menuItemsList[position].itemPrice = priceOfOneItem * menuItemsList[position].quantity
+                binding.orderCountButtons.orderCount.text = menuItemsList[position].quantity.toString()
+                notifyItemChanged(position)
+                notifyItemRangeChanged(position, menuItemsList.size)
             }
         }
+
         private fun deleteItem(position : Int){
             menuItemsList.removeAt(position)
             notifyItemRemoved(position)

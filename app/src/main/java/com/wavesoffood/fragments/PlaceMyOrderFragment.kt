@@ -9,12 +9,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.NavController
+import com.wavesoffood.MainActivity
 import com.wavesoffood.R
 import com.wavesoffood.databinding.FragmentPlaceMyOrderBinding
 
 class PlaceMyOrderFragment : Fragment() {
 
     private lateinit var binding: FragmentPlaceMyOrderBinding
+    private lateinit var navController: NavController
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -22,12 +25,17 @@ class PlaceMyOrderFragment : Fragment() {
         // Inflate the layout for this fragment
         binding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_place_my_order, container, false)
+        navController = (activity as MainActivity).getNavController()
+        binding.totalPriceTextView.text = "$ ${arguments?.getInt("totalPrice")}"
 
+
+
+        binding.backArrowImg.setOnClickListener {
+            navController.popBackStack()
+        }
 
         binding.placeOrderButton.setOnClickListener {
-            orderPlaceDialog(requireContext(), goToHome = {
-                //TODO go to home
-            })?.show()
+            placeOrderButtonClicked(binding)
         }
 
 
@@ -46,6 +54,23 @@ class PlaceMyOrderFragment : Fragment() {
         }
         builder.setCanceledOnTouchOutside(false)
         return builder
+    }
+
+    private fun placeOrderButtonClicked(binding: FragmentPlaceMyOrderBinding) {
+        if (binding.enterName.text.isEmpty()) {
+            binding.nameErrorLabel.visibility = View.VISIBLE
+
+        } else if (binding.enterAddress.text.isEmpty()) {
+            binding.addressErrorLabel.visibility = View.VISIBLE
+
+        } else if (binding.enterPhoneNumber.text.isEmpty()) {
+            binding.phoneNumberErrorLabel.visibility = View.VISIBLE
+        }else{
+            orderPlaceDialog(requireContext(),
+                goToHome = {
+                    navController.navigate(R.id.action_placeMyOrderFragment_to_homeFragment)
+                })?.show()
+        }
     }
 
 }

@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="@drawable/admin_card_background"
+        android:background="@drawable/admin_info_card_bg"
         android:elevation="4dp">
 
         <LinearLayout
@@ -28,6 +28,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_info_green"
+                app:tint="@color/red"
                 android:layout_marginTop="10dp" />
 
             <TextView

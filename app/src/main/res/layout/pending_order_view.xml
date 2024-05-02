@@ -8,13 +8,13 @@
     </data>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/itemView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/rounded_corner_16_bg"
-        app:cardCornerRadius="12sp"
-        android:elevation="4dp">
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp">
+
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -25,58 +25,67 @@
                 android:id="@+id/menu_image"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="16dp"
                 android:background="@drawable/rounded_corner_16_bg"
                 android:src="@drawable/menu_photo_1"
-                android:layout_margin="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/dish_name"
+                android:id="@+id/customerName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="24dp"
                 android:fontFamily="@font/yeon_sung"
                 android:text="Spacy fresh crab"
                 android:textSize="15sp"
-                android:layout_marginTop="24dp"
-                android:layout_marginStart="8dp"
                 app:layout_constraintStart_toEndOf="@+id/menu_image"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/item_price"
+                android:id="@+id/text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginBottom="24dp"
                 android:fontFamily="@font/yeon_sung"
-                android:text="$ 35"
+                android:text="Quantity"
+                android:textColor="@color/black_2"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/customerName" />
+
+            <TextView
+                android:id="@+id/quantityCountTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/yeon_sung"
+                android:text="12"
                 android:textColor="@color/green"
-                android:textSize="22sp"
-                app:chainUseRtl="true"
-                android:layout_marginEnd="16dp"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/text_view"
+                app:layout_constraintStart_toEndOf="@+id/text_view"
+                app:layout_constraintTop_toTopOf="@+id/text_view" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/acceptDispatchButton"
+                android:layout_width="81dp"
+                android:layout_height="26dp"
+                android:layout_marginEnd="16sp"
+                android:background="@drawable/rounded_corner_bg_green"
+                android:text="Accept"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toTopOf="@+id/addToCartButton"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_chainStyle="packed" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/addToCartButton"
-                android:layout_width="65dp"
-                android:layout_height="24dp"
-                android:background="@drawable/rounded_corner_bg_green"
-                android:text="@string/add_to_cart"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="8sp"
-                android:layout_marginTop="6dp"
-                android:layout_marginEnd="8dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/item_price"
-                app:layout_constraintVertical_chainStyle="packed" />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-
     </androidx.cardview.widget.CardView>
 </layout>

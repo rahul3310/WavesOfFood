@@ -31,31 +31,33 @@ class SearchFragment : Fragment() {
         navController = (activity as MainActivity).findNavController(R.id.nav_host_fragment)
         //Menu item Recyclerview---->
         val menuItemsList = ArrayList<MenuItemDetails>()
-        menuItemsList.add(MenuItemDetails("Herbal Pancake", "$ 35", R.drawable.menu_photo_1))
-        menuItemsList.add(MenuItemDetails("Herbal Pancake", "$ 35", R.drawable.menu_photo_2))
-        menuItemsList.add(MenuItemDetails("Herbal Pancake", "$ 35", R.drawable.menu_photo_3))
-        menuItemsList.add(MenuItemDetails("Herbal Pancake", "$ 35", R.drawable.menu_photo_4))
-        menuItemsList.add(MenuItemDetails("Herbal Pancake", "$ 35", R.drawable.menu_photo_1))
-        menuItemsList.add(MenuItemDetails("Herbal Pancake", "$ 35", R.drawable.menu_photo_2))
-        menuItemsList.add(MenuItemDetails("Herbal Pancake", "$ 35", R.drawable.menu_photo_3))
-        menuItemsList.add(MenuItemDetails("Herbal Pancake", "$ 35", R.drawable.menu_photo_4))
-        menuItemsList.add(MenuItemDetails("Herbal Pancake", "$ 35", R.drawable.menu_photo_1))
-        menuItemsList.add(MenuItemDetails("Herbal Pancake", "$ 35", R.drawable.menu_photo_2))
-        menuItemsList.add(MenuItemDetails("Herbal Pancake", "$ 35", R.drawable.menu_photo_3))
-        menuItemsList.add(MenuItemDetails("Herbal Pancake", "$ 35", R.drawable.menu_photo_4))
+        menuItemsList.add(MenuItemDetails("Herbal Pancake", 35, R.drawable.menu_photo_1))
+        menuItemsList.add(MenuItemDetails("Herbal Pancake", 35, R.drawable.menu_photo_2))
+        menuItemsList.add(MenuItemDetails("Herbal Pancake", 35, R.drawable.menu_photo_3))
+        menuItemsList.add(MenuItemDetails("Herbal Pancake", 35, R.drawable.menu_photo_4))
+        menuItemsList.add(MenuItemDetails("Herbal Pancake", 35, R.drawable.menu_photo_1))
+        menuItemsList.add(MenuItemDetails("Herbal Pancake", 35, R.drawable.menu_photo_2))
+        menuItemsList.add(MenuItemDetails("Herbal Pancake", 35, R.drawable.menu_photo_3))
+        menuItemsList.add(MenuItemDetails("Herbal Pancake", 35, R.drawable.menu_photo_4))
+        menuItemsList.add(MenuItemDetails("Herbal Pancake", 35, R.drawable.menu_photo_1))
+        menuItemsList.add(MenuItemDetails("Herbal Pancake", 35, R.drawable.menu_photo_2))
+        menuItemsList.add(MenuItemDetails("Herbal Pancake", 35, R.drawable.menu_photo_3))
+        menuItemsList.add(MenuItemDetails("Herbal Pancake", 35, R.drawable.menu_photo_4))
         val adapter = MenuAdapter(menuItemsList = menuItemsList)
         binding.recyclerViewCartContainer.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerViewCartContainer.adapter = adapter
 
         val addToCartClick = object : OnAddToCartClickListener {
             override fun onAddToCartClicked(menuItem: MenuItemDetails) {
-                navController.navigate(R.id.action_searchFragment_to_cartFragment)
+                val bundle = Bundle()
+                bundle.putParcelable("menuItem", menuItem)
+                navController.navigate(R.id.action_searchFragment_to_cartFragment, bundle)
             }
         }
         val onItemClickListener = object : OnItemClickListener {
             override fun onItemClick(menuItemDetails: MenuItemDetails) {
                 (activity as MainActivity).getNavController()
-                    .navigate(R.id.action_homeFragment_to_foodDetailsFragment)
+                    .navigate(R.id.action_searchFragment_to_foodDetailsFragment)
             }
         }
         adapter.setOnItemClickListener(onItemClickListener)

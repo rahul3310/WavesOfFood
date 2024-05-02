@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/admin_navigation_graph"
+    app:startDestination="@id/adminHomeFragment">
+
+    <fragment
+        android:id="@+id/adminHomeFragment"
+        android:name="com.wavesoffood.adminfragments.AdminHomeFragment"
+        android:label="fragment_admin_home"
+        tools:layout="@layout/fragment_admin_home" >
+        <action
+            android:id="@+id/action_adminHomeFragment_to_addItemFragment"
+            app:destination="@id/addItemFragment" />
+        <action
+            android:id="@+id/action_adminHomeFragment_to_allItemsFragment"
+            app:destination="@id/allItemsFragment" />
+        <action
+            android:id="@+id/action_adminHomeFragment_to_outOfDeliveryFragment"
+            app:destination="@id/outOfDeliveryFragment" />
+        <action
+            android:id="@+id/action_adminHomeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_adminHomeFragment_to_pendingOrdersFragment"
+            app:destination="@id/pendingOrdersFragment" />
+        <action
+            android:id="@+id/action_adminHomeFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@layout/fragment_login"
+            app:popUpToInclusive="false"/>
+
+    </fragment>
+    <fragment
+        android:id="@+id/addItemFragment"
+        android:name="com.wavesoffood.adminfragments.AddItemFragment"
+        android:label="AddItemFragment" />
+    <fragment
+        android:id="@+id/allItemsFragment"
+        android:name="com.wavesoffood.adminfragments.AllItemsFragment"
+        android:label="AllItemsFragment" />
+    <fragment
+        android:id="@+id/outOfDeliveryFragment"
+        android:name="com.wavesoffood.adminfragments.OutOfDeliveryFragment"
+        android:label="fragment_out_of_delivery"
+        tools:layout="@layout/fragment_out_of_delivery" />
+    <fragment
+        android:id="@+id/pendingOrdersFragment"
+        android:name="com.wavesoffood.adapters.PendingOrdersFragment"
+        android:label="PendingOrdersFragment" />
+</navigation>

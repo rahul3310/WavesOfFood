@@ -13,64 +13,19 @@
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:elevation="4dp"
             android:background="@drawable/bottom_navigation_view_bg"
+            android:elevation="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
+                android:id="@+id/adminToolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-
                 <LinearLayout
-                    android:id="@+id/usertoolBarView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:visibility="gone"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/user_back_arrow_img"
-                        android:visibility="gone"
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:layout_gravity="start"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginEnd="16dp"
-                        android:layout_marginBottom="8dp"
-                        android:src="@drawable/ic_arrow_left_circle" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/user_top_bar_title"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.8"
-                            android:fontFamily="@font/yeon_sung"
-                            android:text="@string/explore_your_favorite_food"
-                            android:textSize="22sp" />
-
-                        <ImageView
-                            android:id="@+id/notification_img"
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:layout_gravity="end"
-                            android:layout_marginEnd="16dp"
-                            android:src="@drawable/ic_notification_green" />
-                    </LinearLayout>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/adminToolBarView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:visibility="visible"
                     android:orientation="horizontal"
                     android:layout_gravity="center">
 
@@ -83,7 +38,7 @@
                         android:visibility="gone"
                         android:src="@drawable/ic_app_logo"/>
                     <ImageView
-                        android:id="@+id/admin_back_arrow_img"
+                        android:id="@+id/back_arrow_img"
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:layout_gravity="start|center_vertical"
@@ -91,7 +46,7 @@
                         android:src="@drawable/ic_arrow_circle_left_black"/>
 
                     <TextView
-                        android:id="@+id/admin_top_bar_title"
+                        android:id="@+id/top_bar_title"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/yeon_sung"
